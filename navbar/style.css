@@ -121,7 +121,6 @@ a{
     }
     .container-nav{
         width: max-content;
-        outline: 2px solid white;
         margin-inline: 0;
     }
     .nav-list{
