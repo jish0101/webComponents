@@ -10,7 +10,6 @@ body{
     font-family: sans-serif;
     min-height: 100vh;
     color: white;
-    background-color: black;
 }
 ul,li{
     list-style: none;
@@ -21,12 +20,12 @@ a{
 }
 .primary-header{
     width: 100%;
+    background-color: black;
 }
 .primary-nav{
     width: 100%;
-    margin-block: 1rem;
 }
-.container{
+.container-nav{
     width: 90%;
     height: 48px;
     display: flex;
@@ -40,7 +39,7 @@ a{
 }
 .nav-list{
     display: none;
-    animation: opacity 2s linear;
+    animation: opacity 1.2s linear forwards;
 }
 .primary-nav[data-expanded] .nav-list{
     width: 100%;
@@ -75,8 +74,8 @@ a{
 .menu-icon::after{
     position: absolute;
     background-color: #fff;
-    width: 40px;
-    height: 5px;
+    width: 32px;
+    height: 4px;
     border-radius: 100vmin;
     transition: all .5s;
 }
@@ -85,19 +84,21 @@ a{
     content: "";
 }
 .menu-icon::before{
-    transform: translate(-20px, -12px);
+    transform: translate(-16px, -8px);
 }
 .menu-icon::after{
-    transform: translate(-20px, 12px);
+    transform: translate(-16px, 8px);
 }
 .primary-nav[data-expanded] .menu-icon {
     background-color: transparent;
+    /* transform: rotate(720deg);
+    if you need rotating icon */
 }
 .primary-nav[data-expanded] .menu-icon::before {
-    transform: translateX(-20px) rotate(45deg);
+    transform: translateX(-18px) rotate(45deg);
 }
 .primary-nav[data-expanded] .menu-icon::after{
-    transform: translateX(-20px) rotate(-45deg);
+    transform: translateX(-18px) rotate(-45deg);
 }
 @keyframes opacity {
     0% {
@@ -109,18 +110,22 @@ a{
 }
 
 @media (min-width: 50em){
+    .header-wrapper{
+        width: 80%;
+        margin-inline: auto;
+    }
     .primary-nav{
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
-    .container{
+    .container-nav{
         width: max-content;
-        margin-inline: 5rem;
+        outline: 2px solid white;
+        margin-inline: 0;
     }
     .nav-list{
         display: flex;
-        margin-left: auto;
-        margin-right: 7rem;
         animation: none;
     }
     .nav-item{
